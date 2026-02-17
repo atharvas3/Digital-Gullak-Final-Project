@@ -1,0 +1,881 @@
+:root{
+    --color-white: #ffffff;
+    --color-light: #f0eff5;
+    --color-gray-light: #86848c;
+    --color-gray-dark: #56555e;
+    --color-dark: #27282f;
+    --color-primary: rgb(71, 7, 234);
+    --color-success: rgb(34, 202, 75);
+    --color-danger: rgb(255, 67, 54);
+    --color-warning: rgb(234, 181, 7);
+    --color-purple: rgb(160, 99, 245);
+    
+    --color-primary-light: rgba(71, 7, 234, 0.2);
+    --color-success-light: rgba(34, 202, 75, 0.2);
+    --color-danger-light: rgba(255, 67, 54, 0.2);
+    --color-purple-light: rgba(160, 99, 245, 0.2);
+    
+    --card-padding: 1.6rem;
+    --padding-1: 1rem;
+    --padding-2: 8px;
+    
+    --card-border-radius: 1.6rem;
+    --border-radius-1: 1rem;
+    --border-radius-2: 6px;
+    }
+     /* after end, when js change theme */
+     .dark-theme {
+        --color-white: #131316;
+        --color-light: #23232a;
+        --color-dark: #ddd;
+        --color-gray-dark: #adacb5;
+    }
+    
+    *{
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        bottom: 0;
+        appearance: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+        /* <!-- navbar --> */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--color-white);
+            z-index: 1000; /* Keep it above other elements */
+            height: 4rem; /* Set a fixed height for the navbar */
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        nav .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            width: 96%;
+            margin: 0 auto;
+        }
+        nav img.logo {
+            width: 12rem;
+        }
+        nav .search-bar{
+            background: var(--color-light);
+            padding: var(--padding-2) var(--card-padding);
+            width: 32vw;
+            border-radius: var(--border-radius-2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--color-gray-light);
+            position: absolute;
+            left: 15%;
+        }
+        nav .search-bar input[type="search"] {
+            color: var(--color-dark);
+            border: none;
+            width: 100%;
+        }
+        nav .search-bar input[type="search"]::placeholder{
+            color: var(--color-gray-dark);
+        }
+        nav .profile-area{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+        nav .profile-area .theme-btn{
+            display: flex;
+            background: var(--color-light);
+            width: 5rem;
+            height: 2rem;
+            border-radius: var(--border-radius-2);
+            cursor: pointer;
+        }
+        
+        nav .profile-area .theme-btn span{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        nav .profile-area .theme-btn .active{
+            background: var(--color-dark);
+            border-radius: var(--border-radius-2);
+            color: var(--color-white);
+        }
+        nav .profile-area .profile{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        nav .profile-area .profile-photo{
+            display: block;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        nav .profile-area .profile span{
+            cursor: pointer;
+        }
+        nav .profile-area button{
+            border: none;
+            display: none;
+        }
+        
+        /* <!-- aside --> */
+        main{
+        display: grid;
+        grid-template-columns: 60rem 16rem;
+        gap: 1.5rem;
+        width: 96%;
+        margin: 5rem auto 4rem;
+        padding-left: 150px;
+        overflow-x: hidden;
+        
+    }
+        main aside{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 88vh;
+            width: 200px;
+            position: fixed;
+            left: 1.5%;
+           
+        
+        }
+        main aside button#close-btn{
+            border: none;
+            /* will be show only on mobile and tablets */
+            display: none;
+        }
+        main aside .sidebar a{
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            height: 4.2rem;
+            color: var(--color-gray-light);
+            position: relative;
+        }
+        main aside .sidebar a span{
+            font-size: 1.7rem;
+            margin-left: 3rem;
+            transition: all 0.3s;
+        }
+        main aside .sidebar a.active{
+            background: var(--color-white);
+            color: var(--color-primary);
+        }
+        main aside .sidebar a.active::before{
+            content: '';
+            width: 6px;
+            height: 100%;
+            position: absolute;
+            background: var(--color-primary);
+        }
+        main aside .sidebar a:hover{
+            color: var(--color-primary);
+        }
+        main aside .sidebar a:hover span{
+            margin-left: 2rem;
+        }
+        main aside .sidebar h4{
+            font-weight: 500;
+        }
+        
+        main aside .updates{
+            background: var(--color-white);
+            border-radius: var(--border-radius-1);
+            text-align: center;
+            padding: var(--card-padding);
+        }
+        main aside .updates span{
+            font-style: 2.8rem;
+        }
+        main aside .updates h4{
+            margin: 1rem 0;
+        }
+        main aside .updates a{
+            display: block;
+            width: 100%;
+            background: var(--color-primary);
+            color: var(--color-white);
+            border-radius: var(--border-radius-1);
+            padding: 0.8rem 0;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        
+        }
+        main aside .updates a:hover{
+            box-shadow: 0 1rem 2rem var(--color-primary-light);
+        }
+        html{
+            font-size: 12px;
+        }
+        body{
+            background: var(--color-light);
+            min-height: 100vh;
+            color: var(--color-dark);
+        }
+        img{
+            width: 100%;
+        }
+        h1{
+            font-size: 2.2rem;
+        }
+        h2{
+            font-size: 1.5rem;
+        }
+        h3{
+            font-size: 1.2rem;
+        }
+        h4{
+            font-size: 1rem;
+        }
+        h5{
+            font-size: 0.86rem;
+            font-weight: 500;
+        }
+        h6{
+            font-size: 0.6rem;
+        }
+        p{
+            font-size: 0.86rem;
+            color: var(--color-gray-dark);
+        }
+
+        @media screen and (max-width: 1024px){
+            nav .search-bar{
+                display: none;
+            }
+            nav .profile-area{
+                gap: 2rem;
+            }
+            nav .profile-area button#menu-btn {
+                display: inline;
+                background: transparent;
+                color: var(--color-dark);
+            }
+            main{
+                grid-template-columns: 1fr;
+                position: relative;
+            }
+            main aside {
+                position: fixed;
+                top: 0;
+                /* left: 0; first to the left 0, and after JS we set -100% and below we write the animation !!! */
+                left: -100%;
+                z-index: 3;
+                background: var(--color-white);
+                width: 22rem;
+                height: 100%;
+                box-shadow: 2rem 0 2rem var(--color-primary-light);
+                /* after main aside .updates/ */
+                display: none;
+                 /* after we write the animation !!! */
+                 animation: showSidebar 0.5s ease forwards;
+            }
+        
+            @keyframes showSidebar {
+                to {
+                    left: 0;
+                }
+            }
+        
+            main aside button#close-btn{
+                display: inline-block;
+                width: 3rem;
+                height: 3rem;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                z-index: 4;
+                background: transparent;
+                color: var(--color-dark);
+            }
+            button:hover{
+                cursor: pointer;
+            }
+            main aside .sidebar{
+                margin-top: 4rem;
+            }
+            main aside .updates{
+                display: none;
+            }
+          
+        }
+
+        @media screen and (max-width: 600px) {
+            nav{
+                width: 106%;
+                position: relative;
+            }
+            nav .profile-area {
+                gap: 2.6rem;
+            }
+            nav .profile h5,
+            nav .profile span {
+                display: none;
+            }
+            main{
+                position: relative;
+            }
+        
+            
+        }
+    /* top Frame*/
+
+    /* Main Content*/
+
+    p{
+        font-size: 20px;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+        color: #000;
+        margin-top: 50px;
+    }
+    .second-side {
+        margin-left: 0;
+        
+        font-size: 16px;
+        font-family: "Arial", sans-serif;
+        font-weight: normal;
+        color: #000;
+        width: 330px;
+        height: 400px;
+        background: var(--color-white);
+        border-radius: var(--card-border-radius);
+        padding: 10px;
+        margin-top: 20px;
+        box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.2);
+    }
+
+  
+    /* From Uiverse.io by SteveBloX */ 
+/*
+  .second-side{
+    width: 500px;
+    height: 600px;
+    background-color: hsl(90, 12%, 97%);
+    margin-left: 60px;
+    right: 0;
+  }
+*/
+
+main .cards .card{
+    background: linear-gradient(#ff796f, #bd261b);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    color: white;
+    height: 16rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2rem 3rem var(--color-danger-light);
+    min-width: 20rem;
+    transition: all 0.3s ease;
+    margin: 15px;
+    margin-top: 10px;
+}
+
+main .cards .card:hover{
+    box-shadow: none;
+}
+main .cards .card .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main .cards .card .top .left{
+    display: flex;
+    gap: 0.5rem;
+}
+main .cards .card .top .left h2{
+    font-weight: 200;
+    font-size: 1.4rem;
+}
+main .cards .card .top .left img{
+    width: 2.3rem;
+    height: 2.3rem;
+    border: 1px solid white;
+    border-radius: var(--border-radius-2);
+    padding: 0.4rem;
+}
+main .cards .card .top img.right{
+    width: 3.5rem;
+}
+main .cards .card .middle{
+    display: flex;
+    justify-content: space-between;
+}
+main  .cards .card .middle .chip{
+    width: 3.5rem;
+}
+main .cards .card .bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+main .cards .card .bottom .right{
+    display: flex;
+    gap: 2rem;
+}
+
+/* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    top: 25%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }
+
+  .deposit-withdraw-buttons {
+    display: grid; /* Enable grid layout */
+    grid-template-columns: 1fr 1fr; /* Divide into two equal parts */
+    gap: 1rem; /* Add spacing between the buttons */
+    align-items: center; /* Center items vertically */
+    justify-items: center; /* Center items horizontally */
+    width: 100%; /* Make the container span full width */
+    margin: 1rem 0; /* Optional: Add spacing around the container */
+    margin-top: 10%;
+}
+
+.myWallet {
+    font-size: 2.5rem; /* Larger font size */
+    font-family: "Playfair Display", serif; /* Stylish font */
+    font-weight: 700; /* Bold font weight */
+    color: var(--color-dark); /* Green color for elegance */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    border-right: var(--color-white); /* Simulate cursor while typing */
+    animation: blink 0.7s step-end infinite; /* Cursor animation during typing */
+    letter-spacing: 2px; /* Add spacing between letters */
+    text-align: center; /* Center align */
+    margin-top: 20px; /* Add spacing above heading */
+    margin-bottom: 10%;
+}
+
+@keyframes blink {
+    from {
+        border-right-color: #fbfcfb;
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
+
+.no-cursor {
+    border-right: none; /* Permanently hide the blinking cursor */
+}
+
+
+#gullakTeam {
+    font-size: 10px;
+    margin-top: 10px;
+    text-align: right; /* Aligns the text to the right */
+}
+
+/* From Uiverse.io by satyamchaudharydev */ 
+.credit-card {
+    --primary-clr: linear-gradient(135deg, #1c204b, #3f9cbb);
+    --dot-clr: #ffffff;
+    width: 370px;
+    height: 200px;
+    border-radius: 15px;
+    padding: 20px;
+    padding-top:15%;
+    color: #ffffff;
+    font-family: "Arial", sans-serif;
+    background: var(--primary-clr);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card-title {
+    font-size: 1.5em;
+    font-weight: 700;
+  }
+  
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .card-number {
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .card-holder,
+  .card-expiry {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+  }
+  
+  .card-holder strong,
+  .card-expiry strong {
+    font-size: 1em;
+    font-weight: 600;
+  }
+  
+  .card-holder span,
+  .card-expiry span {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+
+
+/* Default Styles for Larger Screens */
+.balance-cards {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columns */
+    gap: 3.5rem; /* Spacing between cards */
+    margin-left: 50px;
+}
+
+/* For screens 1024px and below */
+@media screen and (max-width: 1024px) {
+    .balance-cards {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns */
+        gap: 2rem; /* Reduce spacing between cards */
+        margin-left: 20px; /* Adjust left margin for smaller screens */
+    }
+}
+
+/* For screens 600px and below */
+@media screen and (max-width: 600px) {
+    .balance-cards {
+        grid-template-columns: repeat(1, 1fr); /* Switch to a single column */
+        gap: 1.5rem; /* Further reduce spacing */
+        margin-left: 10px; /* Adjust left margin */
+       
+    }
+}
+
+/* For mobile screens (e.g., below 480px) */
+@media screen and (max-width: 480px) {
+    .balance-cards {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 1rem; /* Minimal spacing between cards */
+        margin-left: 5px; /* Minimal margin for better fit */
+    }
+}
+
+.first-side{
+    margin-top: 3%;
+   
+}
+.msg{
+    color: var(--color-dark);
+}
+main section.right .investments {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    margin: 5% 1rem 0 50px;
+    padding: 1rem;
+  }
+  
+  /* For screens with a max width of 1040px */
+  @media screen and (max-width: 1040px) {
+    main section.right .investments {
+      margin: 5% 1rem 0 30px; /* Reduce left margin */
+    }
+  }
+  
+  /* For screens with a max width of 600px */
+  @media screen and (max-width: 600px) {
+    main section.right .investments {
+      margin: 5% 1rem 0 20px; /* Reduce left margin further */
+    }
+  }
+  
+  /* For screens with a max width of 480px */
+  @media screen and (max-width: 480px) {
+    main section.right .investments {
+      margin: 5% 1rem 0 10px; /* Minimal left margin */
+    }
+  }
+
+main section.right .investments img {
+  width: 2.4rem;
+  border-radius: 50%;
+}
+
+main section.right .investments .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--card-padding);
+  margin-bottom: 20px;
+}
+
+main section.right .investments .header a {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+main section.right .investments .investment1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--color-dark); /* Light gray background for clarity */
+  border-bottom: 1px solid var(--color-light);
+  border-radius: 4px;
+}
+
+main section.right .investments .investment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid var(--color-light);
+  transition: all 0.3s ease;
+}
+
+main section.right .investments .investment:last-child {
+  border-bottom: none;
+}
+
+main section.right .investments .investment:hover {
+  background: var(--color-light);
+  cursor: pointer;
+}
+
+.date-time p,
+.bonds p{
+    font-size: 10px;
+    margin: 0;
+    color: var(--color-dark);
+}
+.head-date p{
+    font-size: 10px;
+    margin: 0;
+    color: var(--color-white);
+  }
+.head-bonds p {
+  font-size: 10px;
+  margin: 0%;
+  
+  color: var(--color-white);
+}
+
+.head-account,
+.head-name{
+    font-size: 10px;
+    color: var(--color-white);
+}
+.head-amount h4 {
+  font-size: 10px;
+  color: var(--color-white);
+}
+
+.amount h4 {
+  color: var(--color-dark);
+  margin: 0;
+  
+}
+
+
+/* For 14-inch laptops (1366px wide) */
+@media screen and (max-width: 1366px) {
+
+    .balance-cards {
+        grid-template-columns: repeat(2, 1fr); /* Maintain 2-column layout */
+        gap: 2rem;
+    }
+
+    main section.right .investments {
+        margin-left: 30px; /* Reduce left margin for better fit */
+    }
+
+    .myWallet {
+        font-size: 2rem; /* Slightly reduce font size */
+    }
+    .credit-card {
+        --primary-clr: linear-gradient(135deg, #1c204b, #3f9cbb);
+        --dot-clr: #ffffff;
+        width: 270px;
+        height: 200px;
+        border-radius: 15px;
+        padding: 20px;
+        padding-top:15%;
+        color: #ffffff;
+        font-family: "Arial", sans-serif;
+        background: var(--primary-clr);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        margin-left: 30px;
+      }
+      main section.right .investments {
+        background: var(--color-white);
+        border-radius: var(--card-border-radius);
+        margin: 5% 1rem 0 50px;
+        padding: 1rem;
+        width: 620px;
+        height:auto;
+        margin-left: 80px;
+        margin-bottom: 10px;
+    
+      }
+      main .cards .card{
+        background: linear-gradient(#ff796f, #bd261b);
+        padding: var(--card-padding);
+        border-radius: var(--card-border-radius);
+        color: white;
+        height: 16rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 2rem 3rem var(--color-danger-light);
+        width:240px;
+        transition: all 0.3s ease;
+        margin: 15px;
+        margin-top: 10px;
+        margin-left: 40px;
+    }
+    .deposit-withdraw-buttons{
+        padding: 110px;
+        margin-top: 20px;
+    }
+    .Btn {
+        display: flex;
+        justify-content: space-between;
+        width: 45px;
+        height: 45px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition-duration: .3s;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+        background-color: rgb(255, 65, 65);
+        top: 0%;
+        margin-top: -140px;
+        margin-left: -30px;
+      }
+      .deposit-withdraw-buttons {
+        display: grid; /* Enable grid layout */
+        grid-template-columns: 1fr 1fr; /* Divide into two equal parts */
+        gap: 8rem; /* Add spacing between the buttons */
+        align-items: center; /* Center items vertically */
+        justify-items: center; /* Center items horizontally */
+        width: 100%; /* Make the container span full width */
+        margin: 1rem 0; /* Optional: Add spacing around the container */
+        margin-top: 10%;
+    }
+    .info-text{
+        font-size: 10px;
+        font-weight: 100;
+        margin-top: 5px;
+        margin-right: -140px;
+        color: var(--color-dark);
+    }
+    #gullakTeam {
+        font-size: 10px;
+        margin-top: 10px;
+        text-align: right; /* Aligns the text to the right */
+        margin-right: -130px;
+    }
+    main{
+        display: grid;
+        grid-template-columns: 59rem 16rem;
+        gap: 1.5rem;
+        width: 96%;
+        margin: 5rem 8px 4rem auto;
+        padding-left: 150px;
+        overflow-x: hidden;
+        
+    }
+}

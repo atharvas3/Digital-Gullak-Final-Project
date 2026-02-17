@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Direct Deposit Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="retrieveData()">
+    <div class="container">
+        <h1>Direct Deposit Detail</h1>
+        <div class="form-grid">
+            <div>
+                <label>First name</label>
+                <input type="text" id="fname" disabled>
+            </div>
+            <div>
+                <label>Last name <span>*</span></label>
+                <input type="text" id="lname" disabled>
+            </div>
+            <div>
+                <label>Date</label>
+                <input type="date" id="date" disabled>
+            </div>
+            <div>
+                <label>Total balance <span>*</span></label>
+                <input type="text" id="total_balance" disabled>
+            </div>
+            <div>
+                <label>Deposited amount <span>*</span></label>
+                <input type="text" id="amount" disabled>
+            </div>
+            <div>
+                <label>Duration</label>
+                <input type="text" id="duration" disabled>
+            </div>
+            <div>
+                <label>UTR/Transaction ID <span>*</span></label>
+                <input type="text" id="transaction_id" disabled>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="update-btn" onclick="window.location.href='update.html'">Update</button>
+        </div>
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>

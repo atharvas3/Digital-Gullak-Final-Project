@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Gullak</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  
+     <!-- navbar -->
+      <div class="fix">
+     <nav>
+        <div class="container">
+            <img src="img/logo.png" class="logo" alt="logo">
+            <div class="search-bar">
+                <span class="material-icons-sharp">search</span>
+                <input type="search" placeholder="Search">
+            </div>
+            <div class="profile-area">
+                <div class="theme-btn">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile" onclick="showProf()">
+                    <div class="profile-photo">
+                        <img src="profile_img.jpg" alt="profile1" id="mainPhoto">
+                    </div>
+                    <h5 id="mainName" style="font-size: 15px;">Akib</h5>
+                    <span class="material-icons-sharp">expand_more</span>
+                </div>
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main -->
+
+    <main>
+
+         <!-- aside -->
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </button>
+            <div class="sidebar">
+              <a href="http://127.0.0.1:5500/login%20page/home.html" >
+                  <span class="material-symbols-outlined">
+                      home
+                      </span>
+                  <h4>Home</h4>
+              </a>
+              <a href=" http://127.0.0.1:5500/Wallet/index.html" class="active">
+                  <span class="material-icons-sharp">account_balance_wallet</span>
+                  <h4>Wallet</h4>
+              </a>
+              <a href="http://127.0.0.1:5500/DashBoard/index.html" >
+                  <span class="material-icons-sharp">dashboard</span>
+                  <h4>Dashboard</h4>
+              </a>
+              <a href=" http://127.0.0.1:5500/Calculator/cal.html">
+                  <span class="material-symbols-outlined">
+                      calculate
+                      </span>
+                  <h4>Interest Calculator</h4>
+              </a>
+              <a href=" http://127.0.0.1:5500/Contact%20Us/index.html" >
+                  <span class="material-symbols-outlined">
+                      call
+                      </span>
+                  <h4>Contact Us</h4>
+              </a>
+              <a href="http://127.0.0.1:5500/Referal/Referrals.html">
+                  <span class="material-symbols-outlined">
+                      group_add
+                      </span>
+                  <h4>Refer</h4>
+              </a>
+              <a href="http://127.0.0.1:5500/Profiles/Profile.html">
+                  <span class="material-symbols-outlined">
+                      account_circle
+                      </span>
+                  <h4>Account</h4>
+              </a>
+          </div>
+            <div class="updates">
+                <span class="material-icons-sharp">update</span>
+                <h4>LOG OUT</h4>
+                <a href="#" onclick="">LogOut Now</a>
+
+            </div>
+
+        </aside>
+        
+        <!--Main Content-->
+        <div class="first-side">
+            <div class="balance-cards">
+                <!--Total Deposite Card-->
+        <div class="credit-card">
+          
+          <div class="card-desc">
+            <div class="card-header">
+              <div class="card-title">Total Deposit</div>
+            </div>
+            <div class="card-details">
+              <div class="card-number">12,340</div>
+              <div class="card-holder">
+                <span>Account Holder</span>
+                <strong>Akib Momin</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Total Withdrawl Card-->
+        <div class="credit-card">
+            <div class="card-desc">
+              <div class="card-header">
+                <div class="card-title">Total Withdraw</div>
+              </div>
+              <div class="card-details">
+                <div class="card-number">120,340</div>
+                <div class="card-holder">
+                  <span>Account Holder</span>
+                  <strong>Akib Momin</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="right">
+            <div class="investments">
+              <div class="header">
+                <h2>Transactions</h2>
+                <a href="#">More <span class="material-icons-sharp">chevron_right</span></a>
+              </div>
+              <!-- Investment Header -->
+              <div class="investment1">
+                <h4 class="head-account">Account</h4>
+                <h4 class="head-name">Name</h4>
+                <div class="head-date">
+                  <p>Date</p>
+                </div>
+                <div class="head-bonds">
+                  <p>Months</p>
+                </div>
+                <div class="head-amount">
+                  <h4>Amount</h4>
+                </div>
+              </div>
+              <!-- Investments -->
+              <div class="investment">
+                <img src="" alt="inv2" class="progImg">
+                <h4 class="invName"></h4>
+                <div class="date-time">
+                  <p>07 Jan, 2025</p>
+                  <small class="text-muted">9:14pm</small>
+                </div>
+                <div class="bonds">
+                  <p>1 Month</p>
+                  <small class="text-muted">Bond</small>
+                </div>
+                <div class="amount">
+                  <h4>$19,681</h4>
+                  <small class="success">+2.05%</small>
+                </div>
+              </div>
+              <div class="investment">
+                <img src="" alt="inv4" class="progImg">
+                <h4 class="invName"></h4>
+                <div class="date-time">
+                  <p>08 Jan, 2025</p>
+                  <small class="text-muted">01:14pm</small>
+                </div>
+                <div class="bonds">
+                  <p>2 Months</p>
+                  <small class="text-muted">Bond</small>
+                </div>
+                <div class="amount">
+                  <h4>$26,734</h4>
+                  <small class="success">+2.22%</small>
+                </div>
+              </div>
+              <div class="investment">
+                <img src="" alt="inv1" class="progImg">
+                <h4 class="invName"></h4>
+                <div class="date-time">
+                  <p>09 Jan, 2025</p>
+                  <small class="text-muted">03:14pm</small>
+                </div>
+                <div class="bonds">
+                  <p>4 Months</p>
+                  <small class="text-muted">Bond</small>
+                </div>
+                <div class="amount">
+                  <h4>$49,957</h4>
+                  <small class="success">+2.39%</small>
+                </div>
+              </div>
+              <div class="investment">
+                <img src="" alt="inv1" class="progImg">
+                <h4 class="invName"></h4>
+                <div class="date-time">
+                  <p>09 Jan, 2025</p>
+                  <small class="text-muted">03:14pm</small>
+                </div>
+                <div class="bonds">
+                  <p>8 Months</p>
+                  <small class="text-muted">Bond</small>
+                </div>
+                <div class="amount">
+                  <h4>$89,957</h4>
+                  <small class="success">+2.89%</small>
+                </div>
+              </div>
+            </div>
+          </section>
+          </div>
+        <div class="main-content" id="mainContent">
+           
+            <div class="second-side">
+                <center>
+                    <h1 class="myWallet" id="walletHeading"></h1>
+                </center>
+                <div class="cards">
+                    <!-- card 1 -->
+                    <div class="card">
+                        <div class="top">
+                            <div class="left">
+                                <img src="rupee.png" alt="card1-1">
+                                <h2>Rupee</h2>
+                            </div>
+                            <img src="visa.png" class="right"   alt="card1-2">
+                        </div>
+                        <div class="middle">
+                            <h1>500</h1>
+                            <div class="chip">
+                              <img src="cardchip.png" class="chip" alt="card-chip">
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <div class="left">
+                                <small>Total</small>
+                                <h5>Balance</h5>
+                            </div>
+                            <div class="right">
+                                <div class="expiry">
+                                    <small>Expiry</small>
+                                    <h5>06/29</h5>
+                                </div>
+                                <div class="cvv">
+                                    <small>CVV</small>
+                                    <h5>123</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="deposit-withdraw-buttons">
+                      <button class="Btn">
+                        <div class="sign">
+                          <svg viewBox="0 0 512 512">
+                            <path d="M480 176H272V32c0-17.7-14.3-32-32-32s-32 14.3-32 32v144H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h176v176c0 17.7 14.3 32 32 32s32-14.3 32-32V240h208c17.7 0 32-14.3 32-32s-14.3-32-32-32z"></path>
+                          </svg>
+                        </div>
+                        <div class="text" onclick="redirect('deposit')" >Deposit</div>
+                      </button>
+                      
+                      <button class="Btn">
+                          <div class="sign">
+                            <svg viewBox="0 0 512 512">
+                              <path d="M480 240H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h448c17.7 0 32-14.3 32-32s-14.3-32-32-32z"></path>
+                            </svg>
+                          </div>
+                          <div class="text" onclick="redirect('with')">Withdraw</div>
+                        </button>
+                        </div>
+            
+            </div>
+       
+              <div class="msg">
+              <p>
+                <h4 style="text-align: center; font-size: 15px; margin-right: -160px;">**Your Money is Safe with Us**</h4>
+                <br>
+                <p class="info-text">Digital Gullak ensures your savings are secure with end-to-end encryption, password-protected access, multi-factor authentication, and 24/7 fraud detection. All transactions are processed through verified, secure gate ways, giving you a worry-free saving experience. Your trust is our priority!</p>
+                <h4 id="gullakTeam">~ Digital Gullak Team</h4>
+            </p>
+            </div>
+            
+        </div>
+        </div>
+    
+</main>
+</div>
+    <script src="index.js"></script>
+</body>
+
+</html>

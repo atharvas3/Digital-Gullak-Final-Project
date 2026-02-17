@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Success</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+  <link rel="stylesheet" href="dep.css">
+  <!-- Firebase scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database-compat.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="navcontainer">
+        <img src="img/logo.png" class="logo" alt="logo">
+        <div class="search-bar">
+            <span class="material-icons-sharp">search</span>
+            <input type="search" placeholder="Search">
+        </div>
+        <div class="profile-area">
+            <div class="theme-btn">
+                <span class="material-icons-sharp active">light_mode</span>
+                <span class="material-icons-sharp">dark_mode</span>
+            </div>
+            <div class="profile">
+                <div class="profile-photo">
+                    <img src="profile_img.jpg" alt="profile1" id="mainPhoto">
+                </div>
+                <h5 id="mainName" style="font-size: 15px;">Akib</h5>
+                <span class="material-icons-sharp">expand_more</span>
+            </div>
+            <button id="menu-btn">
+                <span class="material-icons-sharp">menu</span>
+            </button>
+        </div>
+    </div>
+  </nav>
+
+  <!-- main -->
+  <main>
+    <!-- aside -->
+    <aside>
+        <button id="close-btn">
+            <span class="material-icons-sharp">close</span>
+        </button>
+        <div class="sidebar">
+            <a href="http://127.0.0.1:5500/login%20page/home.html">
+                <span class="material-symbols-outlined">home</span>
+                <h4>Home</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/Wallet/index.html" class="active">
+                <span class="material-icons-sharp">account_balance_wallet</span>
+                <h4>Wallet</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/DashBoard/index.html">
+                <span class="material-icons-sharp">dashboard</span>
+                <h4>Dashboard</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/Calculator/cal.html">
+                <span class="material-symbols-outlined">calculate</span>
+                <h4>Interest Calculator</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/Contact%20Us/index.html">
+                <span class="material-symbols-outlined">call</span>
+                <h4>Contact Us</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/Referal/Referrals.html">
+                <span class="material-symbols-outlined">group_add</span>
+                <h4>Refer</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/Profiles/Profile.html">
+                <span class="material-symbols-outlined">account_circle</span>
+                <h4>Account</h4>
+            </a>
+        </div>
+        <br>
+        <div class="updates">
+            <span class="material-icons-sharp">update</span>
+            <h4>LOG OUT</h4>
+            <a href="#" id="logout">LogOut Now</a>
+        </div>
+    </aside>
+
+    <div class="success-container">
+        <div class="success-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="success-message">Payment Successful!</div>
+        <div class="success-details">
+          <div class="detail"><strong>Card Holder:</strong> <span id="card-holder"></span></div>
+          <div class="detail"><strong>Amount Paid:</strong> <span id="amount"></span></div>
+          <div class="detail"><strong>Transaction ID:</strong> <span id="transaction-id"></span></div>
+          <div class="detail"><strong>Duration:</strong> <span id="duration"></span></div>
+          <div class="detail"><strong>Date:</strong> <span id="date"></span></div>
+        </div>
+        <a href="deposit1.html" class="back-button">Go Back to Payment</a>
+    </div>
+  </main>
+
+  <script src="dep.js"></script>
+</body>
+</html>

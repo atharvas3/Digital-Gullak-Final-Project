@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="withdraw.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+</head>
+<body>
+       <!-- navbar -->
+       <nav>
+        <div class="container">
+            <img src="img/logo.png" class="logo" alt="logo">
+            <div class="search-bar">
+                <span class="material-icons-sharp">search</span>
+                <input type="search" placeholder="Search">
+            </div>
+            <div class="profile-area">
+                <div class="theme-btn">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-photo">
+                        <img src="profile_img.jpg" alt="profile1" id="mainPhoto">
+                    </div>
+                    <h5 id="mainName" style="font-size: 15px;">Akib</h5>
+                    <span class="material-icons-sharp">expand_more</span>
+                </div>
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main -->
+
+    <main>
+         <!-- aside -->
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </button>
+            <div class="sidebar">
+              <a href="http://127.0.0.1:5500/login%20page/home.html" >
+                  <span class="material-symbols-outlined">
+                      home
+                      </span>
+                  <h4>Home</h4>
+              </a>
+              <a href=" http://127.0.0.1:5500/Wallet/index.html">
+                  <span class="material-icons-sharp">account_balance_wallet</span>
+                  <h4>Wallet</h4>
+              </a>
+              <a href="http://127.0.0.1:5500/DashBoard/index.html" class="active">
+                  <span class="material-icons-sharp">dashboard</span>
+                  <h4>Dashboard</h4>
+              </a>
+              <a href=" http://127.0.0.1:5500/Calculator/cal.html">
+                  <span class="material-symbols-outlined">
+                      calculate
+                      </span>
+                  <h4>Interest Calculator</h4>
+              </a>
+              <a href=" http://127.0.0.1:5500/Contact%20Us/index.html" >
+                  <span class="material-symbols-outlined">
+                      call
+                      </span>
+                  <h4>Contact Us</h4>
+              </a>
+              <a href="http://127.0.0.1:5500/Referal/Referrals.html">
+                  <span class="material-symbols-outlined">
+                      group_add
+                      </span>
+                  <h4>Refer</h4>
+              </a>
+              <a href="http://127.0.0.1:5500/Profiles/Profile.html" >
+                  <span class="material-symbols-outlined">
+                      account_circle
+                      </span>
+                  <h4>Account</h4>
+              </a>
+          </div>
+            <div class="updates">
+              <span class="material-icons-sharp">update</span>
+              <h4>LOG OUT</h4>
+              <a href="#" onclick="">LogOut Now</a>
+
+          </div>
+        </aside>
+
+          <!-- Main Content -->
+           <div class="container1">
+    <div class="content" id="content">
+      <div class="withdraw-container" id="withdraw-section">
+        <!-- Replace the cancel link with a button -->
+<div class="header">
+  <h1>Withdraw Money</h1>
+  <button id="cancel-btn" class="cancel-btn">Resset</button>
+</div>
+
+        <div class="amount">
+          <h2 id="withdraw-amount">₹ 0.00</h2>
+          <p id="available-balance" style="color: #151514;">₹ 458.78 AVAILABLE BALANCE</p>
+        </div>
+        <div class="withdraw-section">
+          <h3>
+            <i class="fas fa-university"></i>
+            Withdraw Money To
+            <a href="#" id="add-beneficiary" style="color: rgb(61, 61, 159);">+ Add Beneficiary</a>
+          </h3>
+          <div class="account">
+            <div id="selected-account">
+              <i class="fas fa-check-circle"></i> Primary Bank Account
+            </div>
+            <div>**** 4327</div>
+          </div>
+          <div class="dropdown" id="bank-dropdown">
+            <select>
+              <option value=""  selected>Select a Bank</option>
+              <option>State Bank of India</option>
+              <option>Punjab National Bank</option>
+              <option>Bank of Baroda</option>
+              
+            </select>
+          </div>
+        </div>
+        <input type="number" id="withdraw-input" placeholder="Enter amount to withdraw" />
+        <button class="confirm-btn" id="confirm-btn">Confirm Withdraw</button>
+      </div>
+    </div>
+  </div>
+    </main>
+<script src="withdraw.js"></script>
+</body>
+</html>

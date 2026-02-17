@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Material Icons for Navbar and Sidebar -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet" />
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css"> <!-- CSS File -->
+  
+  <title>About Us - Portfolio Website</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="navcontainer">
+      <img src="img/logo.png" class="logo" alt="logo">
+      <div class="search-bar">
+        <span class="material-icons-sharp">search</span>
+        <input type="search" placeholder="Search">
+      </div>
+      <div class="profile-area">
+        <div class="theme-btn">
+          <span class="material-icons-sharp active">light_mode</span>
+          <span class="material-icons-sharp">dark_mode</span>
+        </div>
+        <div class="profile">
+          <div class="profile-photo">
+            <img src="profile_img.jpg" alt="profile" id="mainPhoto">
+          </div>
+          <h5 id="mainName" style="font-size: 15px;">Akib</h5>
+          <span class="material-icons-sharp">expand_more</span>
+        </div>
+        <button id="menu-btn">
+          <span class="material-icons-sharp">menu</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Sidebar -->
+    <aside>
+      <button id="close-btn">
+        <span class="material-icons-sharp">close</span>
+      </button>
+      <div class="sidebar">
+        <a href="http://127.0.0.1:5500/login%20page/home.html" >
+            <span class="material-symbols-outlined">
+                home
+                </span>
+            <h4>Home</h4>
+        </a>
+        <a href=" http://127.0.0.1:5500/Wallet/index.html">
+            <span class="material-icons-sharp">account_balance_wallet</span>
+            <h4>Wallet</h4>
+        </a>
+        <a href="http://127.0.0.1:5500/DashBoard/index.html" >
+            <span class="material-icons-sharp">dashboard</span>
+            <h4>Dashboard</h4>
+        </a>
+        <a href=" http://127.0.0.1:5500/Calculator/cal.html">
+            <span class="material-symbols-outlined">
+                calculate
+                </span>
+            <h4>Interest Calculator</h4>
+        </a>
+        <a href=" http://127.0.0.1:5500/Contact%20Us/index.html" class="active">
+            <span class="material-symbols-outlined">
+                call
+                </span>
+            <h4>Contact Us</h4>
+        </a>
+        <a href="http://127.0.0.1:5500/Referal/Referrals.html">
+            <span class="material-symbols-outlined">
+                group_add
+                </span>
+            <h4>Refer</h4>
+        </a>
+        <a href="http://127.0.0.1:5500/Profiles/Profile.html">
+            <span class="material-symbols-outlined">
+                account_circle
+                </span>
+            <h4>Account</h4>
+        </a>
+    </div>
+      <br>
+      <div class="updates">
+        <span class="material-icons-sharp">update</span>
+        <h4>LOG OUT</h4>
+        <a href="#">LogOut</a>
+
+    </div>
+    </aside>
+
+    <!-- About Us Section -->
+    <section class="about-us">
+      <div class="about-img">
+        <img src="img/tushar.jpg" alt="Team Member">
+      </div>
+      <div class="about-content">
+        <h1>Hi, It's <span id="teamName">Tushar</span></h1>
+        <h3 class="typing-text">I'm a <span id="teamRole">Backend Developer</span></h3>
+        <p id="teamDescription">
+          Backend Developer: Designs APIs, manages databases, and optimizes server performance ⚡🔧, ensuring seamless data flow and system reliability 🔄💾.
+        </p>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </section>
+
+    
+    <div class="complaint-box">
+      <h2>📢 Submit a Complaint</h2>
+
+      <label for="complaint-category">Complaint Category:</label>
+      <select id="complaint-category">
+          <option value="">Select a category</option>
+          <option value="service">Service Issue</option>
+          <option value="technical">Technical Problem</option>
+          <option value="billing">Billing Discrepancy</option>
+          <option value="other">Other</option>
+      </select>
+
+      <label for="complaint-description">Describe Your Complaint:</label>
+      <textarea id="complaint-description" placeholder="Provide details about your issue..."></textarea>
+
+      <label for="incident-date">Date of Incident:</label>
+      <input type="date" id="incident-date">
+
+      <label for="proof-file">Attach Supporting Document (PDF/Image):</label>
+      <input type="file" id="proof-file" accept="application/pdf, image/*">
+
+      <div class="checkbox-group">
+          <input type="checkbox" id="personal-followup">
+          <label for="personal-followup">Receive personal follow-up regarding your complaint.</label>
+      </div>
+
+      <button type="button" id="complaintSubmit">Submit Complaint</button>
+  </div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script type="module" src="nav.js"></script>
+</body>
+</html>

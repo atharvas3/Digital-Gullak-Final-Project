@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="payment.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-database-compat.js"></script>
+</head>
+<body>
+    <!-- navbar -->
+    <nav>
+        <div class="navcontainer">
+            <img src="img/logo.png" class="logo" alt="logo">
+            <div class="search-bar">
+                <span class="material-icons-sharp">search</span>
+                <input type="search" placeholder="Search">
+            </div>
+            <div class="profile-area">
+                <div class="theme-btn">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-photo">
+                        <img src="profile_img.jpg" alt="profile1" id="mainPhoto">
+                    </div>
+                    <h5 id="mainName" style="font-size: 15px;">Akib</h5>
+                    <span class="material-icons-sharp">expand_more</span>
+                </div>
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- main -->
+    <main>
+        <!-- aside -->
+        <aside>
+            <button id="close-btn">
+                <span class="material-icons-sharp">close</span>
+            </button>
+            <div class="sidebar">
+                <a href="http://127.0.0.1:5500/login%20page/home.html">
+                    <span class="material-symbols-outlined">home</span>
+                    <h4>Home</h4>
+                </a>
+                <a href="http://127.0.0.1:5500/Wallet/index.html" class="active">
+                    <span class="material-icons-sharp">account_balance_wallet</span>
+                    <h4>Wallet</h4>
+                </a>
+                <a href="http://127.0.0.1:5500/DashBoard/index.html">
+                    <span class="material-icons-sharp">dashboard</span>
+                    <h4>Dashboard</h4>
+                </a>
+                <a href="http://127.0.0.1:5500/Calculator/cal.html">
+                    <span class="material-symbols-outlined">calculate</span>
+                    <h4>Interest Calculator</h4>
+                </a>
+                <a href="http://127.0.0.1:5500/Contact%20Us/index.html">
+                    <span class="material-symbols-outlined">call</span>
+                    <h4>Contact Us</h4>
+                </a>
+                <a href="http://127.0.0.1:5500/Referal/Referrals.html">
+                    <span class="material-symbols-outlined">group_add</span>
+                    <h4>Refer</h4>
+                </a>
+                <a href="http://127.0.0.1:5500/Profiles/Profile.html">
+                    <span class="material-symbols-outlined">account_circle</span>
+                    <h4>Account</h4>
+                </a>
+            </div>
+            <br>
+            <div class="updates">
+                <span class="material-icons-sharp">update</span>
+                <h4>LOG OUT</h4>
+                <a href="#" id="logout">LogOut Now</a>
+            </div>
+        </aside>
+
+        <div id="main-container" class="container1">
+            <center>
+                <h2 style="font-size: 25px;">Scan To Pay</h2>
+                <img src="phonepay.png" id="qr-code" alt="QR Code" style="width: 300px; height: auto;">
+                <div class="icons" style="display: flex; justify-content: space-around; margin-top: 30px;">
+                    <img src="phonepay-logo-removebg-preview.png" id="phonepay-logo" onclick="setPhonePay()" style="width: 80px; height: 40px;">
+                    <img src="google-pay-logo-removebg-preview.png" id="googlepay-logo" onclick="setGooglePay()" style="width: 60px; height: 40px;">
+                    <img src="paytm-logo-removebg-preview.png" id="paytm-logo" onclick="setPaytm()" style="width: 60px; height: 60px; margin-top: -10px;">
+                </div>
+                <input
+                    type="text"
+                    id="utr"
+                    placeholder="Enter UTR"
+                    style="width: 300px; height: 30px; margin-top: 30px; border: 1px solid black;"
+                >
+                <button class="myButton" onclick="checkUTR()">CONFIRM</button>
+                <div id="processing-message" style="display: none; color: blue; margin-top: 10px;">Processing your request...</div>
+            </center>
+        </div>
+    </main>
+
+    <!-- Full-screen overlay -->
+    <div id="full-screen-overlay" class="overlay">
+        <div class="overlay-content">Processing your request...</div>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html>

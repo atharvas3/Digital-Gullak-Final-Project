@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment QR Code Selector</title>
+    <style>
+        .payment-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .symbols {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+        .symbols img {
+            width: 50px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .symbols img.selected {
+            border-color: #007bff;
+        }
+        .qr-code {
+            text-align: center;
+        }
+        .qr-code img {
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        .qr-code p {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <p>Please select a payment method to pay $10:</p>
+        <div class="symbols">
+            <img src="phonepe.png" alt="PhonePe" data-method="phonepe" onclick="showQR('phonepe')">
+            <img src="googlepay.png" alt="Google Pay" data-method="googlepay" onclick="showQR('googlepay')">
+            <img src="paytm.png" alt="Paytm" data-method="paytm" onclick="showQR('paytm')">
+        </div>
+        <div class="qr-code" id="qr-code">
+            <img id="qr-image" src="" alt="" style="display: none;">
+            <p id="qr-caption"></p>
+        </div>
+    </div>
+
+    <script>
+        const methodNames = {
+            'phonepe': 'PhonePe',
+            'googlepay': 'Google Pay',
+            'paytm': 'Paytm'
+        };
+
+        function showQR(method) {
+            const qrImage = document.getElementById('qr-image');
+            const qrCaption = document.getElementById('qr-caption');
+            
+            // Update QR code image and make it visible
+            qrImage.src = `${method}_qr.png`;
+            qrImage.alt = `QR Code for ${methodNames[method]} payment`;
+            qrImage.style.display = 'block';
+            
+            // Update caption
+            qrCaption.textContent = `Scan this QR code with ${methodNames[method]} to pay $10.`;
+            
+            // Highlight the selected symbol
+            const symbols = document.querySelectorAll('.symbols img');
+            symbols.forEach(symbol => {
+                symbol.classList.remove('selected');
+                if (symbol.getAttribute('data-method') === method) {
+                    symbol.classList.add('selected');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

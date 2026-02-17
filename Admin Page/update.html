@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Update Deposit Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="update.css">
+</head>
+
+<body onload="fetchDataForUpdate()">
+    <div class="container">
+        <form id="f1">
+        <h1>Update Deposit Detail</h1>
+        <div class="form-grid">
+            <div>
+                <label>First name</label>
+                <input type="text" id="fname">
+            </div>
+            <div>
+                <label>Last name <span>*</span></label>
+                <input type="text" id="lname">
+            </div>
+            <div>
+                <label>Date</label>
+                <input type="date" id="date">
+            </div>
+            <div>
+                <label>Total balance <span>*</span></label>
+                <input type="text" id="total_balance">
+            </div>
+            <div>
+                <label>Deposited amount <span>*</span></label>
+                <input type="text" id="amount">
+            </div>
+            <div>
+                <label>Duration</label>
+                <input type="text" id="duration">
+            </div>
+            <div>
+                <label>UTR/Transaction ID</label>
+                <input type="text" id="transaction_id">
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <button type="button" class="update-btn" onclick="updateFirebase()">Update</button>
+            <button type="button" class="reset-btn" onclick="resetForm()">Reset</button>
+        </div>
+    </form>
+    </div>
+    <script type="module" src="update.js"></script>
+</body>
+</html>

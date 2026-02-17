@@ -1,0 +1,619 @@
+/* ======================================== */
+/* GLOBAL STYLES & FONT IMPORT              */
+/* ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+
+
+/* ======================================== */
+/* NAVBAR & SIDEBAR (Fixed Layout)          */
+/* ======================================== */
+
+:root{
+  --color-white: #ffffff;
+  --color-light: #f0eff5;
+  --color-gray-light: #86848c;
+  --color-gray-dark: #56555e;
+  --color-dark: #27282f;
+  --color-primary: rgb(71, 7, 234);
+  --color-success: rgb(34, 202, 75);
+  --color-danger: rgb(255, 67, 54);
+  --color-warning: rgb(234, 181, 7);
+  --color-purple: rgb(160, 99, 245);
+  
+  --color-primary-light: rgba(71, 7, 234, 0.2);
+  --color-success-light: rgba(34, 202, 75, 0.2);
+  --color-danger-light: rgba(255, 67, 54, 0.2);
+  --color-purple-light: rgba(160, 99, 245, 0.2);
+  
+  --card-padding: 1.6rem;
+  --padding-1: 1rem;
+  --padding-2: 8px;
+  
+  --card-border-radius: 1.6rem;
+  --border-radius-1: 1rem;
+  --border-radius-2: 6px;
+  }
+   /* after end, when js change theme */
+   .dark-theme {
+      --color-white: #131316;
+      --color-light: #23232a;
+      --color-dark: #ddd;
+      --color-gray-dark: #adacb5;
+  }
+  
+  *{
+      margin: 0;
+      padding: 0;
+      outline: 0;
+      bottom: 0;
+      appearance: 0;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+      /* <!-- navbar --> */
+      nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background: var(--color-white);
+          z-index: 1000; /* Keep it above other elements */
+          height: 4rem; /* Set a fixed height for the navbar */
+      }
+      nav .navcontainer{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+          width: 100%;
+          height: max-content;
+          padding-top: 7px;
+          margin: 0 auto;
+      }
+      nav img.logo {
+          width: 12rem;
+      }
+      nav .search-bar{
+          background: var(--color-light);
+          padding: var(--padding-2) var(--card-padding);
+          width: 32vw;
+          border-radius: var(--border-radius-2);
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          color: var(--color-gray-light);
+          position: absolute;
+          left: 15%;
+      }
+      nav .search-bar input[type="search"] {
+          color: var(--color-dark);
+          border: none;
+          width: 100%;
+      }
+      nav .search-bar input[type="search"]::placeholder{
+          color: var(--color-gray-dark);
+      }
+      nav .profile-area{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 4rem;
+      }
+      nav .profile-area .theme-btn{
+          display: flex;
+          background: var(--color-light);
+          width: 5rem;
+          height: 2rem;
+          border-radius: var(--border-radius-2);
+          cursor: pointer;
+      }
+      
+      nav .profile-area .theme-btn span{
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.3rem;
+      }
+      nav .profile-area .theme-btn .active{
+          background: var(--color-dark);
+          border-radius: var(--border-radius-2);
+          color: var(--color-white);
+      }
+      nav .profile-area .profile{
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+      }
+      nav .profile-area .profile-photo{
+          display: block;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          overflow: hidden;
+      }
+      nav .profile-area .profile span{
+          cursor: pointer;
+      }
+      nav .profile-area button{
+          border: none;
+          display: none;
+      }
+      
+      /* <!-- aside --> */
+      main {
+          margin-left: 16rem; /* Offset for the sidebar */
+          padding-top: 4rem; /* Offset for the navbar */
+          display: grid;
+          grid-template-columns: 1fr; /* Adjust based on layout */
+          gap: 2rem;
+      }
+      main aside {
+          position: fixed;
+          top: 4rem; /* Adjust to start below the navbar */
+          left: 0;
+          width: 16rem; /* Sidebar width */
+          height: calc(100vh - 4rem); /* Full height minus the navbar */
+          background: var(--color-light);
+          z-index: 900; /* Below navbar but above content */
+      }
+      main aside button#close-btn{
+          border: none;
+          /* will be show only on mobile and tablets */
+          display: none;
+      }
+      main aside .sidebar a{
+          position: fixed;
+          display: flex;
+          align-items: center;
+          gap: 1.2rem;
+          height: 4.2rem;
+          color: var(--color-gray-light);
+          position: relative;
+      }
+      main aside .sidebar a span{
+          font-size: 1.7rem;
+          margin-left: 3rem;
+          transition: all 0.3s;
+      }
+      main aside .sidebar a.active{
+          background: var(--color-white);
+          color: var(--color-primary);
+      }
+      main aside .sidebar a.active::before{
+          content: '';
+          width: 6px;
+          height: 100%;
+          position: absolute;
+          background: var(--color-primary);
+      }
+      main aside .sidebar a:hover{
+          color: var(--color-primary);
+      }
+      main aside .sidebar a:hover span{
+          margin-left: 2rem;
+      }
+      main aside .sidebar h4{
+          font-weight: 500;
+      }
+      
+      main aside .updates{
+          margin-top: -8px;
+          background: var(--color-white);
+          border-radius: var(--border-radius-1);
+          text-align: center;
+          padding: var(--card-padding);
+          margin-left: 5px;
+          margin-bottom: 5px;
+      }
+      main aside .updates span{
+          font-style: 2.8rem;
+      }
+      main aside .updates h4{
+          margin: 1rem 0;
+      }
+      main aside .updates a{
+          display: block;
+          width: 100%;
+          background: var(--color-primary);
+          color: var(--color-white);
+          border-radius: var(--border-radius-1);
+          padding: 0.8rem 0;
+          margin-top: 2rem;
+          transition: all 0.3s ease;
+      
+      }
+      main aside .updates a:hover{
+          box-shadow: 0 1rem 2rem var(--color-primary-light);
+      }
+      html{
+          font-size: 12px;
+      }
+      body{
+          background: var(--color-light);
+          min-height: 100vh;
+          color: var(--color-dark);
+      }
+      img{
+          width: 100%;
+      }
+      h1{
+          font-size: 2.2rem;
+      }
+      h2{
+          font-size: 1.5rem;
+      }
+      h3{
+          font-size: 1.2rem;
+      }
+      h4{
+          font-size: 1rem;
+      }
+      h5{
+          font-size: 0.86rem;
+          font-weight: 500;
+      }
+      h6{
+          font-size: 0.6rem;
+      }
+      p{
+          font-size: 0.86rem;
+          color: var(--color-gray-dark);
+      }
+
+      @media screen and (max-width: 1024px){
+          nav .search-bar{
+              display: none;
+          }
+          nav .profile-area{
+              gap: 2rem;
+          }
+          nav .profile-area button#menu-btn {
+              display: inline;
+              background: transparent;
+              color: var(--color-dark);
+          }
+          main{
+              grid-template-columns: 1fr;
+          }
+          main aside {
+              position: fixed;
+              top: 0;
+              /* left: 0; first to the left 0, and after JS we set -100% and below we write the animation !!! */
+              left: -100%;
+              z-index: 3;
+              background: var(--color-white);
+              width: 22rem;
+              height: 100%;
+              box-shadow: 2rem 0 2rem var(--color-primary-light);
+              /* after main aside .updates/ */
+              display: none;
+               /* after we write the animation !!! */
+               animation: showSidebar 0.5s ease forwards;
+          }
+      
+          @keyframes showSidebar {
+              to {
+                  left: 0;
+              }
+          }
+      
+          main aside button#close-btn{
+              display: inline-block;
+              width: 3rem;
+              height: 3rem;
+              position: absolute;
+              top: 1rem;
+              right: 1rem;
+              z-index: 4;
+              background: transparent;
+              color: var(--color-dark);
+          }
+          button:hover{
+              cursor: pointer;
+          }
+          main aside .sidebar{
+              margin-top: 4rem;
+          }
+          main aside .updates{
+              display: none;
+          }
+        
+      }
+
+      @media screen and (max-width: 600px) {
+          nav{
+              width: 106%;
+          }
+          nav .profile-area {
+              gap: 2.6rem;
+          }
+          nav .profile h5,
+          nav .profile span {
+              display: none;
+          }
+      
+          
+      }
+
+
+  
+
+
+/* ======================================== */
+/* ABOUT US PAGE STYLES                     */
+/* ======================================== */
+
+.about-us {
+  max-width: 1200px;
+  margin-left: 0;
+  margin-top: -5%;
+  min-height: 100vh;
+  padding: 5rem 9% 5rem 0;
+  background-color: var(--color-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+}
+
+/* Image Section */
+
+
+.about-us .about-img img {
+  width: 100%;
+  border-radius: 150px;
+  height: 300px;
+  box-shadow: 0 0 25px solid #b74b4b;
+  transition: 0.2s linear;
+}
+
+.about-us .about-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Content Section */
+.about-us .about-content {
+  max-width: 600px;
+  margin-left: -50px;
+}
+
+.about-us .about-content h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.about-us .about-content h3 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.about-us .about-content p {
+  font-size: 1.6rem;
+  margin-top: 100px;
+  margin: 2rem 0;
+}
+
+/* Social Icons */
+.about-us .social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: transparent;
+  border: 0.2rem solid #b74b4b;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin: 3rem 1.5rem 3rem 0;
+  transition: 0.3s ease;
+  color: #b74b4b;
+}
+
+.about-us .social-icons a:hover {
+  color: whitesmoke;
+  transform: scale(1.3) translateY(-5px);
+  background-color: #b74b4b;
+  box-shadow: 0 0 25px #b74b4b;
+}
+
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.typing-text span{
+    position: relative;
+}
+.typing-text span::before{
+    content: "software Developer";
+    color: #b74b4b;
+    animation: words 10s infinite;
+}
+.typing-text span::after{
+    content: "";
+    background-color: var(--color-light);
+    position: absolute;
+    width: calc(50% + 6px);
+    height: 80%;
+    border-left: 3px solid var(--color-light);
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 3px solid #b74b4b;
+    }
+}
+@keyframes words{
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: "Developer";
+    }
+    41%, 60%{
+        content: "Web Designer";
+    }
+    61%, 80%{
+        content: "Student";
+    }
+    81%, 100%{
+        content: "Script Writer";
+    }
+}
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+    .home-content h1{
+        font-size: 5rem;
+    }
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}    
+
+
+
+
+/* Existing styles remain unchanged */
+
+/* Team Member Carousel */
+.team-member {
+  display: none; /* Hide all team members by default */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.team-member.active {
+  display: block; /* Show only the active member */
+  opacity: 1;
+}
+
+
+/* Smooth transition effect */
+.team-member {
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.team-member.active {
+  opacity: 1;
+}
+
+.about-img img, .about-content h1 span, .typing-text span, .about-content p {
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+
+
+
+
+/* ================= Complaint Form ======================= */
+.complaint-box {
+    margin: 0 auto; /* Centers horizontally */
+    margin-bottom: 25px;
+    width: 400px;
+    background: var(--color-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.complaint-box h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.complaint-box label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.complaint-box input,
+.complaint-box textarea,
+.complaint-box select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--color-light);
+    font-size: 14px;
+}
+
+.complaint-box textarea {
+    resize: none;
+    height: 80px;
+}
+
+.complaint-box select {
+    cursor: pointer;
+}
+
+.complaint-box input[type="file"] {
+    padding: 8px;
+    border: none;
+    background: var(--color-light);
+}
+
+.complaint-box button {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.complaint-box button:hover {
+    background: #0056b3;
+}
+
+/* Checkbox Styling */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 450px) {
+    .complaint-box {
+        width: 90%;
+        padding: 15px;
+    }
+}

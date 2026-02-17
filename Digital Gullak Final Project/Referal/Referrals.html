@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referrals</title>
+    <link rel="stylesheet" href="Referrals_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- navbar -->
+<nav>
+    <div class="navcontainer">
+        <img src="img/logo.png" class="logo" alt="logo">
+        <div class="search-bar">
+            <span class="material-icons-sharp">search</span>
+            <input type="search" placeholder="Search">
+        </div>
+        <div class="profile-area">
+            <div class="theme-btn">
+                <span class="material-icons-sharp active">light_mode</span>
+                <span class="material-icons-sharp">dark_mode</span>
+            </div>
+            <div class="profile">
+                <div class="profile-photo">
+                    <img src="profile_img.jpg" alt="profile1" id="mainPhoto">
+                </div>
+                <h5 id="mainName" style="font-size: 15px;">Akib</h5>
+                <span class="material-icons-sharp">expand_more</span>
+            </div>
+            <button id="menu-btn">
+                <span class="material-icons-sharp">menu</span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- main -->
+
+<main>
+    <!-- aside -->
+    <aside>
+        <button id="close-btn">
+            <span class="material-icons-sharp">close</span>
+        </button>
+        <div class="sidebar">
+            <a href="http://127.0.0.1:5500/login%20page/home.html">
+                <span class="material-symbols-outlined">home</span>
+                <h4>Home</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/Wallet/index.html">
+                <span class="material-icons-sharp">account_balance_wallet</span>
+                <h4>Wallet</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/DashBoard/index.html">
+                <span class="material-icons-sharp">dashboard</span>
+                <h4>Dashboard</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/Calculator/cal.html">
+                <span class="material-symbols-outlined">calculate</span>
+                <h4>Interest Calculator</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/Contact%20Us/index.html">
+                <span class="material-symbols-outlined">call</span>
+                <h4>Contact Us</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/Referal/Referrals.html" class="active">
+                <span class="material-symbols-outlined">group_add</span>
+                <h4>Refer</h4>
+            </a>
+            <a href="http://127.0.0.1:5500/Profiles/Profile.html">
+                <span class="material-symbols-outlined">account_circle</span>
+                <h4>Account</h4>
+            </a>
+        </div>
+        <br>
+        <div class="updates">
+            <span class="material-icons-sharp">update</span>
+            <h4>LOG OUT</h4>
+            <a href="#" id="logout">LogOut Now</a>
+        </div>
+    </aside>
+
+    <!-- Referral Section -->
+    <div class="ref-container">
+        <div class="ref_card">
+            <h2>🎉 Referral System</h2>
+            <button id="generateReferral" class="ref_btn">Generate Referral Code</button>
+            <div id="referralDisplay" class="referral-box">
+                <p id="referralCode">Your code will appear here</p>
+                <button id="copyReferral" class="copy-btn" style="display: none;">📋 Copy Code</button>
+            </div>
+        </div>
+
+        <div class="ref_card">
+            <h3>🔗 Have a Referral Code?</h3>
+            <input type="text" id="inputReferral" class="input-box" placeholder="Enter referral code">
+            <button id="applyReferral" class="ref_btn">Apply Code</button>
+        </div>
+
+        <div class="ref_card">
+            <h3>👥 Referred Users</h3>
+            <p id="referredBy"></p>
+            <button id="showReferredUsers" class="ref_btn">Show Referred Users</button>
+            <ul id="referredUsersList" class="user-list"></ul>
+        </div>
+    </div>
+
+</main>
+
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="referral.js"></script>
+</body>
+</html>
